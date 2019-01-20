@@ -1,0 +1,19 @@
+<h2>{{ cat.name }}</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <cat-photo url="cat.photo"></cat-photo>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <p class="col-md-2 font-weight-bold">Age:</p>
+            <p class="col-md-6">{{ cat.age | ageFilter }}</p>
+        </div>
+        <div class="row">
+            <p class="col-md-2 font-weight-bold">Sex:</p>
+            <p class="col-md-2">{{ cat.sex }}</p>
+        </div>
+    </div>
+</div>

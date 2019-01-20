@@ -1,0 +1,13 @@
+# Dependency directory
+node_modules
+
+# Build folder
+dist
+
+# Transpiled scripts
+assets/scripts
+
+package.lock.json
+
+# Coverage
+coverage

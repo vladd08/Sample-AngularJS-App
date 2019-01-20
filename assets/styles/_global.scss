@@ -1,0 +1,29 @@
+$error-red1: #cc0000;
+$error-red2: #970303;
+$nicescroll-blue: #0074D9;
+.container-fluid {
+    .title {
+        font-size: 2.5rem;
+    }
+}
+
+.error-text {
+    color: $error-red1;
+}
+
+.error-input {
+    border: 1px solid $error-red1 !important;
+    &:focus {
+        border-color: $error-red2 !important;
+        box-shadow: 0px 0px 8px $error-red2 !important;
+    }
+}
+
+.nicescroll-cursors {
+    width: 8px !important;
+    background-color: $nicescroll-blue !important;
+}
+
+.clickable {
+    cursor: pointer !important;
+}

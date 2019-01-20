@@ -1,0 +1,98 @@
+<h2>Cat generator</h2>
+<form name="catform" autocomplete="off" novalidate>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="catname">Name</label>
+            <input required type="text" class="form-control form-control-sm" id="catname" name="catname" placeholder="E.g. Tom"
+                aria-describedby="catnameHelp" ng-class="{'error-input': isFieldValid('catname')}" ng-model="cat.name"
+                ng-model-options="{ updateOn : 'blur'}">
+            <small ng-if="catform.catname.$invalid && catform.catname.$touched" id="catnameHelp" class="error-text form-text">This
+                field is required</small>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="catbreed">Breed</label>
+            <input required type="text" class="form-control form-control-sm" id="breed" name="catbreed" placeholder="E.g. Common"
+                aria-describedby="catbreedHelp" ng-class="{'error-input': isFieldValid('catbreed')}" ng-model="cat.breed"
+                ng-model-options="{ updateOn : 'blur'}">
+            <small ng-if="catform.catbreed.$invalid && catform.catbreed.$touched" id="catbreedHelp" class="error-text form-text">This
+                field is required</small>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="catage">Age</label>
+            <input required type="number" min="0" class="form-control form-control-sm" id="age" name="catage"
+                placeholder="E.g. 1.2 (1 year and two months)" aria-describedby="catageHelp" ng-class="{'error-input': isFieldValid('catage')}"
+                ng-model="cat.age" ng-model-options="{ updateOn : 'blur'}">
+            <small ng-if="catform.catage.$invalid && catform.catage.$touched" id="catageHelp" class="error-text form-text">This
+                field is required</small>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="catsex">Sex</label>
+            <select required aria-describedby="catsexHelp" ng-class="{'error-input': isFieldValid('catsex')}" name="catsex"
+                ng-options="sex for sex in catsexOptions" ng-model="catsex" class="custom-select custom-select-sm">
+            </select>
+            <small ng-if="catform.catsex.$invalid && catform.catsex.$touched" id="catsexHelp" class="error-text form-text">This
+                field is required</small>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="catphoto">Photo</label>
+            <input required type="text" class="form-control form-control-sm" id="catphoto" name="catphoto" placeholder="E.g. https://catsite..."
+                aria-describedby="catphotoHelp" ng-class="{'error-input': isFieldValid('catphoto')}" ng-model="cat.photo"
+                ng-model-options="{ updateOn : 'blur'}">
+            <small ng-if="catform.catphoto.$invalid && catform.catphoto.$touched" id="catphotoHelp" class="error-text form-text">This
+                field is required</small>
+        </div>
+    </div>
+    <button ng-disabled="isFormValid(catform)" type="submit" ng-click="addCat()" class="btn btn-primary">Add
+        cat</button>
+</form>
+<br>
+<!-- <div ng-if="showCats()">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Breed</th>
+            </tr>
+        </thead>
+    </table>
+    <table class="table table-hover">
+        <tbody>
+            <div class="cats-scrollable">
+                <tr ui-sref="main.cat({catId: $index + 1})" ng-click="selectCat(cat)" ng-class="{'table-active' : isCatSelected(cat)}"
+                    ng-repeat="cat in cats track by $index">
+                    <th scope="row">{{ ::$index + 1 }}</th>
+                    <td>{{ ::cat.name }}</td>
+                    <td>{{ ::cat.breed }}</td>
+                </tr>
+            </div>
+
+        </tbody>
+
+    </table>
+</div> -->
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Breed</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="cats-scrollable" nice-scroll>
+    <table class="table table-hover">
+        <tr class="clickable" ui-sref="main.cat({catId: $index + 1})" ng-click="selectCat(cat)" ng-class="{'table-active' : isCatSelected(cat)}"
+            ng-repeat="cat in cats track by $index">
+            <th scope="row">{{ ::$index + 1 }}</th>
+            <td>{{ ::cat.name }}</td>
+            <td>{{ ::cat.breed }}</td>
+        </tr>
+    </table>
+</div>
