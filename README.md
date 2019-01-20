@@ -9,4 +9,4 @@ A couple things you'll find inside:
 * Some custom wrappers to make things a bit more dev-friendly (Check ModuleHandler.js)
 * Usage of some common-practiced UI scenarios like form validation, routing, url params decoupling & data displaying made quite simple and   clean
 
-I do not claim this project or any of the contained code to be the source of truth or the best way one can possibly do this. Keep in mind that every software developer has its own needs and practices and might find code to be fit for his needs or not. Also, this is part of my self-development and it's not intended to be maintained or made wide-public open, so don't rely on it for anything serious.
+I do not claim this project or any of the contained code to be the source of truth or the best way one can possibly do this. Keep in mind that every software developer has its own needs and practices and might find code to be fit for his needs or not. Also, this is part of my self development and it's not intended to be maintained or made wide-public open, so don't rely on it for anything serious.
